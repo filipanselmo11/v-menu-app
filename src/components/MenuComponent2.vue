@@ -1,0 +1,34 @@
+<template>
+  <v-row justify="space-around">
+    <v-col cols="12">
+      <v-menu bottom origin="center center" transition="scale-transition" offset-x>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="primary" dark v-bind="attrs" v-on="on">Menu</v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item v-for="(item, i) in items" :key="i">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-col>
+  </v-row>
+</template>
+
+<script>
+export default {
+    name: 'MenuComponent2',
+    data: () => ({
+    items: [
+      { title: "Click Me" },
+      { title: "Click Me 2" },
+      { title: "Click Me 3" },
+    ],
+  }),
+}
+</script>
+
+<style>
+
+</style>
